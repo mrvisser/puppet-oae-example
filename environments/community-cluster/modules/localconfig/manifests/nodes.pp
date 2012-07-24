@@ -186,7 +186,8 @@ node 'oae-app0.localdomain' inherits oaeappservernode {
         remote_object_port => $localconfig::ehcache_remote_object_port,
     }
     
-    class { 'munin::server': }
+    include munin::host
+    include munin::client
 }
 
 node 'oae-app1.localdomain' inherits oaeappservernode {
@@ -197,7 +198,7 @@ node 'oae-app1.localdomain' inherits oaeappservernode {
         remote_object_port => $localconfig::ehcache_remote_object_port,
     }
     
-    class { 'munin::client': }
+    include munin::client
 }
 
 ###########################################################################
