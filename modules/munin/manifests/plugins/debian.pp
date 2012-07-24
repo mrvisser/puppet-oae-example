@@ -1,0 +1,1 @@
+class munin::plugins::debian  { }
