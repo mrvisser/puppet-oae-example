@@ -5,6 +5,11 @@
 
 # Global, editable VARS
 SOLR_JAVA_OPTS=" -Dsolr.solr.home=<%= solr_app %> -Djetty.port=8983 "
+
+<% if javagclog -%>
+SOLR_JAVA_OPTS="$SOLR_JAVA_OPTS -verbosegc -XX:+PrintGCDetails -Xloggc:<%= javagclog %> "
+<% end -%>
+
 SOLR_USER="<%= scope.lookupvar('solr::common::user') %>"
 SOLR_HOME=<%= solr_app %>
 JAVA_BIN="/usr/bin/java"
