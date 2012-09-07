@@ -34,5 +34,8 @@ class people {
         realize(User['stuart'])
         realize(Ssh_authorized_key['stuart-public'])
 
+        realize(User['simong'])
+        realize(Ssh_authorized_key['simong-public'])
+
         realize(Ssh_authorized_key['ec2-user-public'])
 }
