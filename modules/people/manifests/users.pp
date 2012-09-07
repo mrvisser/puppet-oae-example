@@ -147,7 +147,7 @@ class people::users {
 
     @user { 'simong':
         ensure     => present,
-        uid        => 799,
+        uid        => 798,
         groups     => [ 'wheel' ],
         home       => '/home/simong',
         managehome => true,
