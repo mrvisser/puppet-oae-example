@@ -307,6 +307,8 @@ node 'oae-solr0.localdomain' inherits solrnode {
       mode    => 644,
       require => File["/home/${localconfig::user}/.oae"],
     }
+
+    class { 'cassandra': }
 }
 
 # node /oae-solr[1-3].localdomain/ inherits solrnode {
@@ -333,6 +335,8 @@ node 'oae-preview.localdomain' inherits oaenode {
     class { 'munin::client':
       allowed_ip_regex => '.*'
     }
+
+    class { 'cassandra': }
 }
 
 ###########################################################################
@@ -452,4 +456,6 @@ node 'oae-db0.localdomain' inherits oaenode {
       content => template("localconfig/drop_all_tables.sql.erb"),
       require => File["/home/${localconfig::user}/.oae/scripts"],
     }
+
+    class { 'cassandra': }
 }
