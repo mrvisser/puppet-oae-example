@@ -308,7 +308,7 @@ node 'oae-solr0.localdomain' inherits solrnode {
       require => File["/home/${localconfig::user}/.oae"],
     }
 
-    class { 'cassandra': }
+    class { 'cassandra::common': }
 }
 
 # node /oae-solr[1-3].localdomain/ inherits solrnode {
@@ -336,7 +336,7 @@ node 'oae-preview.localdomain' inherits oaenode {
       allowed_ip_regex => '.*'
     }
 
-    class { 'cassandra': }
+    class { 'cassandra::common': }
 }
 
 ###########################################################################
@@ -457,5 +457,5 @@ node 'oae-db0.localdomain' inherits oaenode {
       require => File["/home/${localconfig::user}/.oae/scripts"],
     }
 
-    class { 'cassandra': }
+    class { 'cassandra::common': }
 }

@@ -1,8 +1,8 @@
 #
-# = Class cassandra
+# = Class cassandra::common
 #
 
-class cassandra {
+class cassandra::common {
 
 	$release = $operatingsystem ? {
 		/CentOS|RedHat/ => $lsbmajdistrelease,
