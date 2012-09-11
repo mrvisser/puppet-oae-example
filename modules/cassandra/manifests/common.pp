@@ -28,5 +28,6 @@ class cassandra::common {
     owner => 'cassandra',
     group => 'cassandra',
     content => template('cassandra/cassandra.erb'),
+    require => Package['dsc1.1'],
   }
 }
