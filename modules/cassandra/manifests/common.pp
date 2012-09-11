@@ -27,6 +27,6 @@ class cassandra {
     mode => 0640,
     owner => 'cassandra',
     group => 'cassandra',
-    content => template('cassandra.erb'),
+    content => template('cassandra/cassandra.erb'),
   }
 }
