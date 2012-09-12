@@ -30,4 +30,15 @@ class cassandra::common {
     content => template('cassandra/cassandra.erb'),
     require => Package['dsc1.1'],
   }
+
+  file { 'cassandra-env.sh': 
+    path => '/etc/cassandra/conf/cassandra-env.sh', 
+    ensure => present,
+    mode => 0755,
+    owner => 'cassandra',
+    group => 'cassandra',
+    content => template('cassandra/cassandra-env.sh.erb'),
+    require => Package['dsc1.1'],
+  }
+
 }
