@@ -62,5 +62,10 @@ class localconfig {
     
     # Preview Processor
     $preview_processor_url = 'OAE-Preview-2008250595.us-west-1.elb.amazonaws.com'
-    
+    # Cassandra
+    $cassandra_seed1 = dnsLookup($preview_processor_url)
+    $cassandra_seed2 = dnsLookup($solr_master)
+    $cassandra_seed3 = dnsLookup($db_server)
+    $cassandra_seeds = "${cassandra_seed1},${cassandra_seed2},${cassandra_seed3}"
+    $cassandra_cluster_name = "OAE Test Cluster"
 }

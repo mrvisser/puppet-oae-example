@@ -7,7 +7,7 @@
 
 # The name of the cluster. This is mainly used to prevent machines in
 # one logical cluster from joining another.
-cluster_name: 'OAE Test Cluster'
+cluster_name: '<%= scope.lookupvar('localconfig::cassandra_cluster_name') %>'
 
 # You should always specify InitialToken when setting up a production
 # cluster for the first time, and often when adding capacity later.
@@ -177,7 +177,7 @@ seed_provider:
       parameters:
           # seeds is actually a comma-delimited list of addresses.
           # Ex: "<ip1>,<ip2>,<ip3>"
-          - seeds: "127.0.0.1,184.169.234.31,184.169.198.184,184.72.16.232"
+          - seeds: "<%= scope.lookupvar('localconfig::cassandra_seeds') %>"
 
 # emergency pressure valve: each time heap usage after a full (CMS)
 # garbage collection is above this fraction of the max, Cassandra will
