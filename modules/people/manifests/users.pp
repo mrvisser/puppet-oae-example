@@ -145,6 +145,7 @@ class people::users {
         key     => 'AAAAB3NzaC1yc2EAAAABIwAAAQEAwhfPEbV9UApTFSODW+5a4k4/mbd+9Sv7fpi2lkUlBMXdToV5GfxPogB92dhRGCOl/B4+9IpMFymaojzMYKlMBVMv0yLAvR+Ldi8Bwtgu21japSyIVBdhuBzU5lMFRiJL2cwHhmMwab3814BClMQL21PAibZOfqZOfYPO0QgOnGwtzPsD8RVzaIml5uiAI8tHldtxByx+vdB4XZzm5jjCPvmGi7aB4Q8Jf+GxJ4LxcBrB373lKru1vWGOd4TMhPcmj00gsrOQKOscle7EBI85b+6Ztggpy/2GmHh3xbqfCq4DZ/mVao5dVU9yH41oO8NthRGslTpXiTzocoXYeXcmNw==',
     }
 
+    @group { 'simong': gid => 798 }
     @user { 'simong':
         ensure     => present,
         uid        => 798,
