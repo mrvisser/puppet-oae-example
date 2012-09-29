@@ -160,6 +160,21 @@ class people::users {
         key     => 'AAAAB3NzaC1yc2EAAAABIwAAAQEA0soT8Mx3eHVbfpqevzdoVSNU7QlQETqqH1N9vIMNucjT4/lEd2Hwb+taHNtx/PA8x4vPIoOjpAp2A9uzjgjLiKZ9spKt3+P+TrmqWysgImFDAIQ0isrA+IsQpjWPB1bxpnoNihiAnYAG5A3G4r6WByVVnmZumPCzDTsKda5USoyu0pNIZMoCUVMZLiFiDfORje83AH0Z81E7DDF6Gatw4vJhtR/FApgGm0MgDjfjW73Jww3PmQkgB4cIzLFugc87xWEDYbrVglg/nDqzPLMyjqnAeaKMUe6ztVGmIGISAoqnUFB5wnD9Z2Is3CQMszsh/tuV1ROXa1o88Bx0l7uVZQ==',
     }
 
+    @group { 'nicolaasmatthijs': gid => 797 }
+    @user { 'nicolaasmatthijs':
+        ensure     => present,
+        uid        => 797,
+        groups     => [ 'wheel' ],
+        home       => '/home/nicolaasmatthijs',
+        managehome => true,
+    }
+    @ssh_authorized_key { 'nicolaasmatthijs-public':
+        ensure  => present,
+        type    => 'ssh-rsa',
+        user    => 'nicolaasmatthijs',
+        key     => 'AAAAB3NzaC1yc2EAAAABIwAAAQEAq1HCf4BjEswCl2SfoYoC2agdRtINYyLAsnrv7bPSaZr3XsX8/yJcgzDcbQVpdOlLzbngNVGTt7Q3MvqIH65FB+AAqymWxzzNqEATUdXxVNBV9/ZbNkcJOTK3TJraIIQc3mD1q/Cf9AmMzyErqGWntIiuqHx1yGQ1gEZEMF7mbpDqicVPOhQAzjPIxx8mTOHev1GTXEplBxz0OSeTC107PWnbJdJi6D1gmwEIFvImI3XYUEjQMf7RKRe2KLgtf6lTSWiT27uMtP/eyBVYSjvTU+zfT8H33UD/IzHu7wnzj3KSYeZNeu3vOSimTs2hTc8qq3i9lvmxUemhjeJvGL9/jQ==',
+    }
+
     @ssh_authorized_key { 'ec2-user-public':
         ensure  => present,
         type    => 'ssh-rsa',
